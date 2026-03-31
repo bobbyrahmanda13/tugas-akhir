@@ -1,0 +1,322 @@
+//
+$g2_ax=(30-$g2)/(30-15); 
+	if($g2_ax>=1){
+		$g2_a=0;
+		}
+	if($g2_ax<=0){
+		$g2_a=0;
+		}	
+	else
+		{
+		$g2_a=number_format($g2_ax,3);
+		}
+if($g2<=30){
+	$g2_b=number_format(($g2-15)/(30-15),3);
+	}
+if($g2>30){
+	$g2_b=number_format((45-$g2)/(45-30),3);
+	}
+$g2_cx=($g2-30)/(45-30); 
+	if($g2_cx>=1){
+		$g2_c=1;
+		}
+	if($g2_cx<=0){
+		$g2_c=0;
+		}
+		else
+		{
+		$g2_c=number_format($g2_cx,3);
+		}		
+//	
+$g3_ax=(4-$g3)/(4-1); 
+	if($g3_ax>=1){
+		$g3_a=0;
+		}
+	if($g3_ax<=0){
+		$g3_a=0;
+		}	
+		else
+		{
+		$g3_a=number_format($g3_ax,3);
+		}
+if($g3<=4){
+	$g3_b=number_format(($g3-1)/(4-1),3);
+	}
+if($g3>4){
+	$g3_b=number_format((7-$g3)/(7-4),3);
+	}
+$g3_cx=($g3-4)/(7-4); 
+	if($g3_cx>=1){
+		$g3_c=0;
+		}
+	if($g3_cx<=0){
+		$g3_c=0;
+		}	
+	else
+		{
+		$g3_c=number_format($g3_cx,3);
+		}	
+//
+//	
+$g4_ax=(32.5-$g4)/(32.5-10); 
+	if($g4_ax>=1){
+		$g4_a=0;
+		}
+	if($g4_ax<=0){
+		$g4_a=0;
+		}	
+	else
+		{
+		$g4_a=number_format($g4_ax,3);
+		}
+if($g4<=32.5){
+	$g4_b=number_format(($g4-10)/(32.5-10),3);
+	}
+if($g4>32.5){
+	$g4_b=number_format((75-$g4)/(75-32.5),3);
+	}
+$g4_cx=($g4-32.5)/(75-32.5); 
+	if($g4_cx>=1){
+		$g4_c=0;
+		}
+	if($g4_cx<=0){
+		$g4_c=0;
+		}	
+	else
+		{
+		$g4_c=number_format($g4_cx,3);
+		}	
+//	
+$g5_ax=(5-$g5)/(5-1); 
+	if($g5_ax>=1){
+		$g5_a=0;
+		}
+	if($g5_ax<=0){
+		$g5_a=0;
+		}
+	else
+		{
+		$g5_a=number_format($g5_ax,3);
+		}	
+if($g5<=5){
+	$g5_b=number_format(($g5-1)/(5-1),3);
+	}
+if($g5>5){
+	$g5_b=number_format((9-$g5)/(9-5),3);
+	}
+$g5_cx=($g5-5)/(9-5); 
+	if($g5_cx>=1){
+		$g5_c=0;
+		}
+	if($g5_cx<=0){
+		$g5_c=0;
+		}		
+	else
+		{
+		$g5_c=number_format($g5_cx,3);
+		}	
+//	
+$g6_ax=(5-$g6)/(5-1); 
+	if($g6_ax>=1){
+		$g6_a=0;
+		}
+	if($g6_ax<=0){
+		$g6_a=0;
+		}	
+	else
+		{
+		$g6_a=number_format($g6_ax,3);
+		}
+if($g6<=5){
+	$g6_b=number_format(($g6-1)/(5-1),3);
+	}
+if($g6>5){
+	$g6_b=number_format((9-$g6)/(9-5),3);
+	}
+$g6_cx=($g6-5)/(9-5); 
+	if($g6_cx>=1){
+		$g6_c=0;
+		}
+	if($g6_cx<=0){
+		$g6_c=0;
+		}	
+	else
+		{
+		$g6_c=number_format($g6_cx,3);
+		}
+//	
+$g7_ax=(35-$g7)/(35-30); 
+	if($g7_ax>=1){
+		$g7_a=0;
+		}
+	if($g7_ax<=0){
+		$g7_a=0;
+		}	
+	else
+		{
+		$g7_a=number_format($g7_ax,3);
+		}
+if($g7<=35){
+	$g7_b=number_format(($g7-1)/(35-30),3);
+	}
+if($g7>35){
+	$g7_b=number_format((40-$g7)/(40-35),3);
+	}
+$g7_cx=($g7-35)/(40-35); 
+	if($g7_cx>=1){
+		$g7_c=0;
+		}
+	if($g7_cx<=0){
+		$g7_c=0;
+		}	
+	else
+		{
+		$g7_c=number_format($g7_cx,3);
+		}
+		
+$g8_ax=(4-$g8)/(4-1); 
+	if($g8_ax>=1){
+		$g8_a=0;
+		}
+	if($g8_ax<=0){
+		$g8_a=0;
+		}
+	else
+		{
+		$g8_a=number_format($g8_ax,3);
+		}	
+if($g8<=4){
+	$g8_b=number_format(($g8-1)/(4-1),3);
+	}
+if($g8>4){
+	$g8_b=(7-$g8)/(7-4);
+	}
+$g8_cx=number_format(($g8-4)/(7-4),3); 
+	if($g8_cx>=1){
+		$g8_c=0;
+		}
+	if($g8_cx<=0){
+		$g8_c=0;
+		}	
+	else
+		{
+		$g8_c=number_format($g8_cx,3);
+		}
+//
+$g9_ax=(4-$g9)/(4-1); 
+	if($g9_ax>=1){
+		$g9_a=0;
+		}
+	if($g9_ax<=0){
+		$g9_a=0;
+		}
+	else
+		{
+		$g9_a=number_format($g9_ax,3);
+		}	
+if($g9<=4){
+	$g9_b=number_format(($g9-1)/(4-1),3);
+	}
+if($g9>4){
+	$g9_b=number_format((7-$g9)/(7-4),3);
+	}
+$g9_cx=number_format(($g9-4)/(7-4),3); 
+	if($g9_cx>=1){
+		$g9_c=0;
+		}
+	if($g9_cx<=0){
+		$g9_c=0;
+		}
+	else
+		{
+		$g9_c=number_format($g9_cx,3);
+		}	
+//
+
+//
+$g10_ax=(30-$g10)/(30-15); 
+	if($g10_ax>=1){
+		$g10_a=0;
+		}
+	if($g10_ax<=0){
+		$g10_a=0;
+		}	
+	else
+		{
+		$g10_a=number_format($g10_ax,3);
+		}
+if($g10<=30){
+	$g10_b=number_format(($g10-15)/(30-15),3);
+	}
+if($g10>30){
+	$g10_b=number_format((45-$g10)/(45-30),3);
+	}
+$g10_cx=($g10-30)/(45-30); 
+	if($g10_cx>=1){
+		$g10_c=0;
+		}
+	if($g10_cx<=0){
+		$g10_c=0;
+		}	
+	else
+		{
+		$g10_c=number_format($g10_cx,3);
+		}	
+//	
+$g11_ax=(160-$g11)/(160-145); 
+	if($g11_ax>=1){
+		$g11_a=0;
+		}
+	if($g11_ax<=0){
+		$g11_a=0;
+		}	
+	else
+		{
+		$g11_a=number_format($g11_ax,3);
+		}
+if($g11<=160){
+	$g11_b=number_format(($g11-145)/(160-145),3);
+	}
+if($g11>160){
+	$g11_b=number_format((175-$g11)/(175-160),3);
+	}
+$g11_cx=($g11-160)/(175-160); 
+	if($g11_cx>=1){
+		$g11_c=0;
+		}
+	if($g11_cx<=0){
+		$g11_c=0;
+		}	
+	else
+		{
+		$g11_c=number_format($g11_cx,3);
+		}	
+//	
+$g12_ax=(8-$g12)/(8-1); 
+	if($g12_ax>=1){
+		$g12_a=0;
+		}
+	if($g12_ax<=0){
+		$g12_a=0;
+		}	
+	else
+		{
+		$g12_a=number_format($g12_ax,3);
+		}
+if($g12<=8){
+	$g12_b=number_format(($g12-1)/(8-1),3);
+	}
+if($g12>8){
+	$g12_b=number_format((15-$g12)/(15-8),3);
+	}
+$g12_cx=number_format(($g12-8)/(15-8),3); 
+	if($g12_cx>=1){
+		$g12_c=0;
+		}
+	if($g12_cx<=0){
+		$g12_c=0;
+		}
+	else
+		{
+		$g12_c=number_format($g12_cx,3);
+		}	

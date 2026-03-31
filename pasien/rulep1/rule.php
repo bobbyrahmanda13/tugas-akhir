@@ -1,0 +1,1117 @@
+<?php 
+session_start();
+	if (empty($_SESSION['userpasien']) AND empty ($_SESSION['passpasien'])){
+	    
+	}else{
+	
+
+	
+ include "../koneksi.php";
+	   $sql = mysql_query("select * from pasien where username = '$_SESSION[userpasien]'");
+	   $r = mysql_fetch_array($sql);
+?>
+<?php 
+	include('../koneksi.php');
+	$query = mysql_query("select * from kriteria  natural join defuzifikasi where username = '$_SESSION[userpasien]' order by id desc");
+	$no = 1;
+	$hasil = mysql_fetch_array($query);
+	$g1=$hasil['g1'];
+	$g2=$hasil['g2'];
+	$g3=$hasil['g3'];
+	$g4=$hasil['g4'];
+	$g5=$hasil['g5'];
+	$g6=$hasil['g6'];
+	$g7=$hasil['g7'];
+	$g8=$hasil['g8'];
+	$g9=$hasil['g9'];
+	$g10=$hasil['g10'];
+	$g11=$hasil['g11'];
+	$g12=$hasil['g12'];
+	
+$g1_ax=(3.4-$g1)/(0.4); 
+	if($g1>=1 and $g1<=3){
+		$g1_a=1;
+		}
+	if($g1>=3.4){
+		$g1_a=0;
+		}	
+	if($g1>=3 and $g1<=3.4){
+		$g1_a=$g1_ax;
+		}
+if($g1>=3 and $g1<=3.4){
+	$g1_b=($g1-3)/(3.4-3);
+	}
+if($g1>3.4 and $g1<=5.4){
+	$g1_b=(5.4-$g1)/(5.4-3.4);
+	}
+	else{
+	$g1_b=0;
+	}
+$g1_cx=($g1-5)/(5.4-5); 
+	if($g1<=5){
+		$g1_c=0;
+		}
+	if($g1_cx>=5.4 and $g1_cx<=7){
+		$g1_c=1;
+		}
+	if($g1>=5 and $g1<=5.4){
+		$g1_c=$g1_cx;
+		}
+//
+$g2_ax=(25-$g2)/(25-21); 
+	if($g2>=15 and $g2<=21){
+		$g2_a=1;
+		}
+	if($g2>=25){
+		$g2_a=0;
+		}	
+	if($g2>=21 and $g2<=25){
+		$g2_a=$g2_ax;
+		}
+	
+	
+if($g2>=21 and $g2<=25){
+	$g2_b=($g2-21)/(25-21);
+	}
+if($g2>25 and $g2<=35){
+	$g2_b=(35-$g2)/(35-25);
+	}
+	else
+	{
+	$g2_b=0;
+	}
+	
+$g2_cx=($g2-32)/(35-32); 
+	if($g2<=32){
+		$g2_c=0;
+		}
+	if($g2>=35){
+		$g2_c=1;
+		}
+	if($g2>=32 and $g2<=35){
+		$g2_c=$g2_cx;
+		}		
+//	
+$g3_ax=(3.4-$g3)/(0.4); 
+	if($g3>=1 and $g3<=3){
+		$g3_a=1;
+		}
+	if($g3>=3.4){
+		$g3_a=0;
+		}	
+	if($g3>=3 and $g3<=3.4){
+		$g3_a=$g3_ax;
+		}
+if($g3>=3 and $g3<=3.4){
+	$g3_b=($g3-3)/(3.4-3);
+	}
+if($g3>3.4 and $g3<=5.4){
+	$g3_b=(5.4-$g3)/(5.4-3.4);
+	}
+	else{
+	$g3_b=0;
+	}
+$g3_cx=($g3-5)/(5.4-5); 
+	if($g3<=5){
+		$g3_c=0;
+		}
+	if($g3>=5.4 and $g3s<=7){
+		$g3_c=1;
+		}
+	if($g3>=5 and $g3<=5.4){
+		$g3_c=$g3_cx;
+		}
+//
+//	
+$g4_ax=(22-$g4)/(2); 
+	if($g4<=20){
+		$g4_a=1;
+		}
+	if($g4>=22){
+		$g4_a=0;
+		}	
+	if($g4>=20 and $g4<=22){
+		$g4_a=$g4_ax;
+		}
+if($g4>=20 and $g4<=22){
+	$g4_b=($g4-20)/(2);
+	}
+if($g4>=22 and $g4<=30){
+	$g4_b=(30-$g4)/(30-22);
+	}
+	else{
+	$g4_b=0;
+	}
+$g4_cx=($g4-28)/(2); 
+	if($g4<=28){
+		$g4_c=0;
+		}
+	if($g4_cx>=30){
+		$g4_c=1;
+		}
+	if($g4>=28 and $g4<=30){
+		$g4_c=$g4_cx;
+		}
+		
+		//	
+$g5_ax=(5-$g5)/(1); 
+	if($g5<=4){
+		$g5_a=1;
+		}
+	if($g5>=5	){
+		$g5_a=0;
+		}	
+	if($g5>=4 and $g5<=5){
+		$g5_a=$g5_ax;
+		}
+if($g5>=4 and $g5<=5){
+	$g5_b=($g5-4)/(1);
+	}
+if($g5>=5 and $g5<=7){
+	$g5_b=(7-$g5)/(2);
+	}
+	else{
+	$g5_b=0;
+	}
+$g5_cx=($g5-6)/(1); 
+	if($g5<=6){
+		$g5_c=0;
+		}
+	if($g5_cx>=7){
+		$g5_c=1;
+		}
+	if($g5>=6 and $g5<=7)
+		{
+		$g5_c=$g5_cx;
+		}
+		
+
+//	
+$g6_ax=(5-$g6)/(1); 
+	if($g6<=4){
+		$g6_a=1;
+		}
+	if($g6>=5	){
+		$g6_a=0;
+		}	
+	if($g6>=4 and $g6<=5){
+		$g6_a=$g6_ax;
+		}
+if($g6>=4 and $g6<=5){
+	$g6_b=($g6-4)/(1);
+	}
+if($g6>=5 and $g6<=7){
+	$g6_b=(7-$g6)/(2);
+	}
+	else{
+	$g6_b=0;
+	}
+$g6_cx=($g6-6)/(1); 
+	if($g6<=6){
+		$g6_c=0;
+		}
+	if($g>=7){
+		$g6_c=1;
+		}
+	if($g6>=6 and $g6<=7){
+		$g6_c=$g6_cx;
+		}
+		
+
+//	
+$g7_ax=(36.5-$g7)/(36.5-36); 
+	if($g7<=36){
+		$g7_a=1;
+		}
+	if($g7>=36.5){
+		$g7_a=0;
+		}	
+	if($g7>=36 and $g7<=36.5)
+		{
+		$g7_a=$g7_ax;
+		}
+if($g7>=36 and $g7<=36.5){
+	$g7_b=($g7-36)/(36.5-36);
+	}
+if($g7>=36.5 and $g7<=37.5){
+	$g7_b=(37.5-$g7)/(1);
+	}
+	else{
+	$g7_b=0;
+	}
+	
+$g7_cx=($g7-37)/(37.5-37); 
+	if($g7<=37){
+		$g7_c=0;
+		}
+	if($g7>=37.5){
+		$g7_c=1;
+		}	
+	if($g7>=37 and $g7<=37.5)
+		{
+		$g7_c=$g7_cx;
+		}
+//		
+$g8_ax=(3.4-$g8)/(0.4); 
+	if($g8>=1 and $g8<=3){
+		$g8_a=1;
+		}
+	if($g8>=3.4){
+		$g8_a=0;
+		}	
+	if($g8>=3 and $g8<=3.4)
+		{
+		$g8_a=$g8_ax;
+		}
+if($g8>=3 and $g8<=3.4){
+	$g8_b=($g8-3)/(3.4-3);
+	}
+if($g8>=3.4 and $g8<=5.4){
+	$g8_b=(5.4-$g8)/(5.4-3.4);
+	}
+	else{
+	$g8_b=0;
+	}
+$g8_cx=($g8-5)/(5.4-5); 
+	if($g8<=5){
+		$g8_c=0;
+		}
+	if($g8_cx>=5.4 and $g8_cx<=7){
+		$g8_c=1;
+		}
+	if($g8>=5 and $g8<=5.4)
+		{
+		$g8_c=$g8_cx;
+		}
+		
+//
+$g9_ax=(3.4-$g9)/(0.4); 
+	if($g9>=1 and $g9<=3){
+		$g9_a=1;
+		}
+	if($g9>=3.4){
+		$g9_a=0;
+		}	
+	if($g9>=3 and $g9<=3.4)
+		{
+		$g9_a=$g9_ax;
+		}
+if($g9>=3 and $g9<=3.4){
+	$g9_b=($g9-3)/(3.4-3);
+	}
+if($g9>=3.4 and $g9<=5.4){
+	$g9_b=(5.4-$g9)/(5.4-3.4);
+	}
+	else{
+	$g9_b=0;
+	}
+$g9_cx=($g9-5)/(5.4-5); 
+	if($g9<=5){
+		$g9_c=0;
+		}
+	if($g9_cx>=5.4 and $g9_cx<=7){
+		$g9_c=1;
+		}
+	if($g9>=5 and $g9<=5.4)
+		{
+		$g9_c=$g9_cx;
+		}//
+
+//
+$g10_ax=(25-$g10)/(4); 
+	if($g10>=15 and $g10<=21){
+		$g10_a=1;
+		}
+	if($g10>=25){
+		$g10_a=0;
+		}	
+	if($g10>=21 and $g10<=25)
+		{
+		$g10_a=$g10_ax;
+		}
+if($g10>=21 and $g10<=25){
+	$g10_b=($g10-21)/(4);
+	}
+if($g10>=25 and $g10<=35){
+	$g10_b=(35-$g10)/(35-25);
+	}
+	else{
+	$g10_b=0;
+	}
+$g10_cx=($g10-32)/(35-32); 
+	if($g10<=32){
+		$g10_c=0;
+		}
+	if($g10>=35){
+		$g10_c=1;
+		}	
+	if($g10>=32 and $g10<=35)
+		{
+		$g10_c=$g10_cx;
+		}	
+		
+//	
+$g11_ax=(157-$g11)/(157-155); 
+	if($g11<=155){
+		$g11_a=1;
+		}
+	if($g11>=157){
+		$g11_a=0;
+		}	
+	if($g11>=155 and $g11<=157)
+		{
+		$g11_a=$g11_ax;
+		}
+if($g11>=155 and $g11<=157){
+	$g11_b=($g11-155)/(157-155);
+	}
+if($g11>=157 and $g11<=167){
+	$g11_b=(167-$g11)/(167-157);
+	}
+$g11_cx=($g11-165)/(167-165); 
+	if($g11<=165){
+		$g11_c=0;
+		}
+	if($g11>=167){
+		$g11_c=1;
+		}	
+	if($g11>=165 and $g11<=167)
+		{
+		$g11_c=$g11_cx;
+		}	
+//	
+$g12_ax=(6-$g12)/(1); 
+	if($g12<=5){
+		$g12_a=1;
+		}
+	if($g12>=6){
+		$g12_a=0;
+		}	
+	if($g12>=5 and $g12<=6)
+		{
+		$g12_a=$g12_ax;
+		}
+if($g12>=5 and $g12<=6){
+	$g12_b=($g12-5)/(1);
+	}
+if($g12>=6 and $g12<=11){
+	$g12_b=(11-$g12)/(11-6);
+	}
+	else{
+	$g12_b=0;
+	}
+$g12_cx=($g12-9)/(11-9); 
+	if($g12<=9){
+		$g12_c=0;
+		}
+	if($g12>=11){
+		$g12_c=1;
+		}	
+	if($g12>=9 and $g12<=11)
+		{
+		$g12_c=$g12_cx;
+		}	
+//	rule
+//RULE [ 1 ] IF G01 “BESAR” AND G02 “TERLALU MIRING” AND G03 “BESAR” AND G04 “SEDIKIT” THEN P01
+$r1=min($g1_c,$g2_c,$g3_c,$g4_a);
+//2.	RULE [ 2 ] IF G01 “BESAR” AND G02 “TERLALU MIRING” AND G03 “BESAR” AND G04 “BANYAK” THEN P01
+$r2=min($g1_c,$g2_c,$g3_c,$g4_c);
+
+//3.	RULE [ 3 ] IF G01 “BESAR” AND G02 “TERLALU MIRING” AND G03 “SEDANG” AND G04 “SEDIKIT” THEN P01
+$r3=min($g1_c,$g2_c,$g3_b,$g4_a);
+
+//4.	RULE [ 4 ] IF G01 “BESAR” AND G02 “MIRING” AND G03 “BESAR” AND G04 “SEDIKIT” THEN P01
+$r4=min($g1_c,$g2_b,$g3_c,$g4_a);
+
+//5.	RULE [ 5 ] IF G01 “SEDANG” AND G02 “TERLALU MIRING” AND G03 “BESAR” AND G04 “SEDIKIT” THEN P01
+$r5=min($g1_b,$g2_c,$g3_c,$g4_a);
+
+//6.	RULE [ 6 ] IF G01 “SEDANG” AND G02 “MIRING” AND G03 “BESAR” AND G04 “SEDIKIT” THEN P01
+$r6=min($g1_b,$g2_b,$g3_c,$g4_a);
+
+//7.	RULE [ 7 ] IF G01 “SEDANG” AND G02 “TERLALU MIRING” AND G03 “SEDANG” AND G04 “BANYAK” THEN P01
+$r7=min($g1_b,$g2_c,$g3_b,$g4_c);
+
+//8.	RULE [ 8 ] IF G01 “BESAR” AND G02 “MIRING” AND G03 “SEDANG” AND G04 “NORMAL” THEN P01
+$r8=min($g1_c,$g2_b,$g3_b,$g4_b);
+
+//9.	RULE [9] IF G05 “SANGAT MENGGANGGU” AND G06 “BERAT” AND G07 “PANAS” AND G08 “BESAR” AND G09 “BESAR” THEN P02
+$r9=min($g5_c,$g6_c,$g7_c,$g8_c,$g9_c);
+
+//10.	RULE [10] IF G05 “SANGAT MENGGANGGU” AND G06 “BERAT” AND G07 “PANAS” AND G08 “SEDANG” AND G09 “SEDANG” THEN P02
+$r10=min($g5_c,$g6_c,$g7_c,$g8_c,$g9_c);
+
+//11.	RULE [11] IF G05 “SANGAT MENGGANGGU” AND G06 “BERAT” AND G07 “DINGIN” AND G08 “BESAR” AND G09 “BESAR” THEN P02
+$r11=min($g5_c,$g6_c,$g7_a,$g8_c,$g9_c);
+
+//12.	RULE [12] IF G05 “MENGGANGGU” AND G06 “SEDANG” AND G07 “PANAS” AND G08 “BESAR” AND G09 “BESAR” THEN P02
+$r12=min($g5_b,$g6_b,$g7_c,$g8_c,$g9_c);
+
+//13.	RULE [13] IF G05 “SANGAT MENGGANGGU” AND G06 “BERAT” AND G07 “NORMAL” AND G08 “SEDANG” AND G09 “BESAR” THEN P02
+$r13=min($g5_c,$g6_c,$g7_b,$g8_b,$g9_c);
+
+//14.	RULE [14] IF G05 “MENGGANGGU” AND G06 “BERAT” AND G07 “PANAS” AND G08 “BESAR” AND G09 “BESAR” THEN P02
+$r14=min($g5_b,$g6_c,$g7_c,$g8_c,$g9_c);
+
+//15.	RULE [15] IF G05 “MENGGANGGU” AND G06 “BERAT” AND G07 “NORMAL” AND G08 “BESAR” AND G09 “BESAR” THEN P02
+$r15=min($g5_b,$g6_c,$g7_b,$g8_c,$g9_c);
+
+//16.	RULE [16] IF G05 “SANGAT MENGGANGGU” AND G06 “NORMal” AND G07 “PANAS” AND G08 “BESAR” AND G09 “SEDANG” THEN P02
+$r16=min($g5_c,$g6_b,$g7_c,$g8_c,$g9_b);
+
+//17.	RULE [17] IF G06“BERAT” AND G10 “BERLEBIHAN” AND G11 “RENDAH” AND G12 “SERING” THEN P03
+$r17=min($g6_c,$g10_c,$g11_a,$g12_c);
+
+//18.	RULE [18] IF G06“BERAT” AND G10 “BERLEBIHAN” AND G11 “RENDAH” AND G12 “KADANG-KADANG” THEN P03
+$r18=min($g6_c,$g10_c,$g11_a,$g12_b);
+
+//19.	RULE [19] IF G06“BERAT” AND G10 “SEDANG” AND G11 “RENDAH” AND G12 “SERING” THEN P03
+$r19=min($g6_c,$g10_b,$g11_a,$g12_c);
+
+//20.	RULE [20] IF G06“BERAT” AND G10 “BERLEBIHAN” AND G11 “RENDAH” AND G12 “SERING” THEN P03
+$r20=min($g6_c,$g10_c,$g11_a,$g12_c);
+
+//21.	RULE [21] IF G06“BERAT” AND G10 “SEDANG” AND G11 “RENDAH” AND G12 “SERING” THEN P03
+$r21=min($g6_c,$g10_b,$g11_a,$g12_c);
+
+//22.	RULE [22] IF G06“BERAT” AND G10 “BERLEBIHAN” AND G11 “NORMAL” AND G12 “SERING” THEN P03
+$r22=min($g6_c,$g10_c,$g11_b,$g12_c);
+
+//23.	RULE [23] IF G06“BERAT” AND G10 “BERLEBIHAN” AND G11 “RENDAH” AND G12 “KADANG-KADANG” THEN P03
+$r23=min($g6_c,$g10_c,$g11_a,$g12_b);
+
+//24.	RULE [24] IF G06“BERAT” AND G10 “SEDANG” AND G11 “NORMAL” AND G12 “KADANG-KADANG” THEN P03
+$r24=min($g6_c,$g10_b,$g11_b,$g12_b);
+
+$z1=98-($r1*97);
+$z2=98-($r2*97);
+$z3=98-($r3*97);
+$z4=98-($r4*97);
+$z5=98-($r5*97);
+$z6=98-($r6*97);
+$z7=98-($r7*97);
+$z8=98-($r8*97);
+$z9=98-($r9*97);
+$z10=98-($r10*97);
+$z11=98-($r11*97);
+$z12=98-($r12*97);
+$z13=98-($r13*97);
+$z14=98-($r14*97);
+$z15=98-($r15*97);
+$z16=98-($r16*97);
+$z17=98-($r17*97);
+$z18=98-($r18*97);
+$z19=98-($r19*97);
+$z20=98-($r20*97);
+$z21=98-($r21*97);
+$z22=98-($r22*97);
+$z23=98-($r23*97);
+$z24=98-($r24*97);
+$a=($r1+$r2+$r3+$r4+$r5+$r6+$r7+$r8);
+if($a==0){
+	$p1="0";
+	}
+if($a>0){
+	$p1=$p1=(($r1*$z1)+($r2*$z2)+($r3*$z3)+($r4*$z4)+($r5*$z5)+($r6*$z6)+($r7*$z7)+($r8*$z8))/$a;
+	}
+	
+$b=($r9+$r1+$r11+$r12+$r13+$r14+$r15+$r16);
+if($b==0){
+	$p2="0";
+	}
+if($b>0){
+	$p2=(($r9*$z9)+($r10*$z10)+($r11*$z11)+($r12*$z12)+($r13*$z13)+($r14*$z14)+($r15*$z15)+($r16*$z16))/$b;
+	}
+
+$c=($r17+$r18+$r19+$r20+$r21+$r22+$r23+$r24);
+if($c==0){
+	$p2="0";
+	}
+if($c>0){
+	$p3=(($r17*$z17)+($r18*$z18)+($r19*$z19)+($r20*$z20)+($r21*$z21)+($r22*$z22)+($r23*$z23)+($r24*$z24))/$c;
+	}
+
+
+$nilai=max($p1,$cp2,$p3);
+if($nilai<=45){
+	$jenis="Ringan";
+	}
+if($nilai>45){
+	$jenis="Berat";
+	}
+	
+
+if($nilai==$p1 and $p1>0){
+		$diagnosa="Skoliosis";
+		$pengobatan="obat/1.php";
+}
+
+if($nilai==$p2 and $p2>0)
+	{
+	$diagnosa="Osteomyelitis";
+	$pengobatan="obat/2.php";
+}
+if($nilai==$p3 and $cp3>0)
+	{
+	$diagnosa="Osteoporosis";
+	$pengobatan="obat/3.php";
+		}
+if($p1==0 and $p2==0 and $p3==0){
+	$diagnosa="Tidak Terdiagnosa Penyakit Tulang";
+	$pengobatan="obat/a.php"; 
+}
+?> <style type="text/css">
+<!--
+.style7 {font-size: 16px}
+-->
+</style>
+
+	<table width="95%">
+  <tr>
+    <td width="9%">R1</td>
+    <td colspan="4">RULE  [ 1 ] IF G01 'BESAR' AND G02 'TERLALU MIRING' AND G03 'BESAR' AND G04 'SEDIKIT'  THEN P01 “BERAT”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td width="8%"><p>&amp;predikat1</p>    </td>
+    <td colspan="3">=<em>u</em>G01' BESAR' n G02 'TERLALU MIRING' n G03' BESAR' n  G04'SEDIKIT'</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' BESAR' n G02' TERLALU MIRING'  n G03' BESAR' n G04' SEDIKIT')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_c";?></em>; <em><?php echo"$g2_c";?></em>; <em><?php echo"$g3_c";?></em>; <em><?php echo"$g4_a";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>      </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r1";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P01 dalam aturan fuzzy [R1] maka nilai z1 adalah:</td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z1 - 46) /(98- 46) </td>
+    <td>=</td>
+    <td><em><?php echo"$r1";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z1 - 46) /(52) </td>
+    <td>=</td>
+    <td><em><?php echo"$r1";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z1-46)</td>
+    <td>=</td>
+    <td><em><?php echo"$r1";?></em> * 52 = <?php echo"$r1"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z1</td>
+    <td>=</td>
+    <td>46 + <?php echo"$r1"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="16%">Z1</td>
+    <td width="5%">=</td>
+    <td width="62%"><?php echo 46+("$r1"*52);?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R2</td>
+    <td colspan="4">RULE  [ 2 ] IF G01 'BESAR' AND G02 'TERLALU MIRING' AND G03 'BESAR' AND G04 'BANYAK'  THEN P01 “RINGAN”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat2</p></td>
+    <td colspan="3">=<em>u</em>G01' BESAR' n G02 'TERLALU MIRING' n G03' BESAR' n  G04 'BANYAK' </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' BESAR' n G02' TERLALU MIRING'  n G03 'BESAR' n G04' BANYAK')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_c";?></em>; <em><?php echo"$g2_c";?></em>; <em><?php echo"$g3_b";?></em>; <em><?php echo"$g4_c";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r2";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P01 dalam aturan fuzzy [R2] maka nilai z2 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45 - Z2) /(45- 1) </td>
+    <td>=</td>
+    <td><em><?php echo"$r2";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45  - Z2) /(44) </td>
+    <td>=</td>
+    <td><em><?php echo"$r2";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45-Z2)</td>
+    <td>=</td>
+    <td><em><?php echo"$r2";?></em> * 44 = <?php echo"$r2"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>-Z2</td>
+    <td>=</td>
+    <td><?php echo"$r2"*97;?>-45</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z2</td>
+    <td>=</td>
+    <td><?php echo( ("$r2"*44)-45)*-1;?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R3</td>
+    <td colspan="4">RULE  [ 3 ] IF G01 'BESAR' AND G02 'TERLALU MIRING' AND G03 'SEDANG' AND G04 'SEDIKIT'  THEN P01 “RINGAN”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat3</p></td>
+    <td colspan="3">=<em>u</em>G01' BESAR' n G02 'TERLALU MIRING' n G03' SEDANG' n  G04'SEDIKIT' </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' BESAR' n G02' TERLALU MIRING'  n G03' SEDANG' n G04' SEDIKIT')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_c";?></em>; <em><?php echo"$g2_c";?></em>; <em><?php echo"$g3_b";?></em>; <em><?php echo"$g4_a";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r3";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P03 dalam aturan fuzzy [R3] maka nilai z1 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45 - Z3) /(45- 1) </td>
+    <td>=</td>
+    <td><em><?php echo"$r3";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45  - Z3) /(44) </td>
+    <td>=</td>
+    <td><em><?php echo"$r3";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45-Z3)</td>
+    <td>=</td>
+    <td><em><?php echo"$r3";?></em> * 44 = <?php echo"$r3"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>-Z3</td>
+    <td>=</td>
+    <td>45 - <?php echo"$r3"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z3</td>
+    <td>=</td>
+    <td><?php echo( ("$r3"*44)-45)*-1;?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R4</td>
+    <td colspan="4">RULE  [ 4 ] IF G01 'BESAR' AND G02 'MIRING' AND G03 'BESAR' AND G04 'SEDIKIT'  THEN P01 “BERAT”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat4</p></td>
+    <td colspan="3">=<em>u</em>G01' BESAR' n G02 'MIRING' n G03 'BESAR' n  G04'SEDIKIT'</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' BESAR' n G02 'MIRING'  n G03' SBESAR' n G04' SEDIKIT')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_c";?></em>; <em><?php echo"$g2_b";?></em>; <em><?php echo"$g3_c";?></em>; <em><?php echo"$g4_a";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r4";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P04 dalam aturan fuzzy [R4] maka nilai z4 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z4 - 46) /(98- 46) </td>
+    <td>=</td>
+    <td><em><?php echo"$r4";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z4 - 46) /(52) </td>
+    <td>=</td>
+    <td><em><?php echo"$r4";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z4-46)</td>
+    <td>=</td>
+    <td><em><?php echo"$r4";?></em> * 52 = <?php echo"$r4"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z4</td>
+    <td>=</td>
+    <td>46 + <?php echo"$r4"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="16%">Z4</td>
+    <td>=</td>
+    <td width="62%"><?php echo 46+("$r4"*52);?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R5</td>
+    <td colspan="4">RULE  [ 5 ] IF G01 'SEDANG' AND G02 'TERLALU MIRING' AND G03 'BESAR' AND G04 'SEDIKIT'  THEN P01 “BERAT”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat5</p></td>
+    <td colspan="3">=<em>u</em>G01' SEDANG' n G02 'TERLALU MIRING' n G03' BESAR' n  G04'SEDIKIT'</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' SEDANG' n G02' TERLALU MIRING'  n G03' SBESAR' n G04' SEDIKIT')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_b";?></em>; <em><?php echo"$g2_c";?></em>; <em><?php echo"$g3_c";?></em>; <em><?php echo"$g4_a";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r5";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P05 dalam aturan fuzzy [R5] maka nilai z5 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z5 - 46) /(98- 46) </td>
+    <td>=</td>
+    <td><em><?php echo"$r5";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z5 - 46) /(52) </td>
+    <td>=</td>
+    <td><em><?php echo"$r5";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z5-46)</td>
+    <td>=</td>
+    <td><em><?php echo"$r5";?></em> * 52 = <?php echo"$r5"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z5</td>
+    <td>=</td>
+    <td>46 + <?php echo"$r5"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="16%">Z5</td>
+    <td>=</td>
+    <td width="62%"><?php echo 46+("$r5"*52);?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R6</td>
+    <td colspan="4">RULE  [ 6 ] IF G01 'SEDANG' AND G02 'MIRING' AND G03 'BESAR' AND G04 'SEDIKIT'  THEN P01 “RINGAN”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat6</p></td>
+    <td colspan="3">=<em>u</em>G01 'SEDANG' n G02 'MIRING' n G03' BESAR' n  G04'SEDIKIT'</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' SEDANG' n G02'  MIRING'  n G03' SBESAR' n G04' SEDIKIT')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min <span class="style7">(<em><?php echo"$g1_b";?></em>; <em><?php echo"$g2_b";?></em>; <em><?php echo"$g3_c";?></em>; <em><?php echo"$g4_a";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r6";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P06 dalam aturan fuzzy [R6] maka nilai z6 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45 - Z6) /(45- 1) </td>
+    <td>=</td>
+    <td><em><?php echo"$r6";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45  - Z6) /(44) </td>
+    <td>=</td>
+    <td><em><?php echo"$r6";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45-Z6)</td>
+    <td>=</td>
+    <td><em><?php echo"$r6";?></em> * 44 = <?php echo"$r6"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>-Z6</td>
+    <td>=</td>
+    <td>45 - <?php echo"$r6"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z6</td>
+    <td>=</td>
+    <td><?php echo( ("$r6"*44)-45)*-1;?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R7</td>
+    <td colspan="4">RULE  [ 7 ] IF G01 'SEDANG' AND G02 'TERLALU MIRING' AND G03 'SEDANG' AND G04 'BANYAK'  THEN P01 “RINGAN”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat1</p></td>
+    <td colspan="3">=<em>u</em>G01' SEDANG' n G02 'TERLALU MIRING' n G03' SEDANG' n  G04 'BANYAK'</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' SEDANG' n G02' TERLALU MIRING'  n G03' SEDANG' n G04 'BANYAK')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_b";?></em>; <em><?php echo"$g2_c";?></em>; <em><?php echo"$g3_b";?></em>; <em><?php echo"$g4_c";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r7";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P07 dalam aturan fuzzy [R7] maka nilai z7 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45 - Z7) /(45- 1) </td>
+    <td>=</td>
+    <td><em><?php echo"$r7";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45  - Z7) /(44) </td>
+    <td>=</td>
+    <td><em><?php echo"$r7";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(45-Z7)</td>
+    <td>=</td>
+    <td><em><?php echo"$r7";?></em> * 44 = <?php echo"$r7"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>-Z7</td>
+    <td>=</td>
+    <td>45 - <?php echo"$r7"*44;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z7</td>
+    <td>=</td>
+    <td><?php echo( ("$r7"*44)-45)*-1;?></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R8</td>
+    <td colspan="4">RULE  [ 8 ] IF G01 'BESAR' AND G02 'MIRING' AND G03 'SEDANG' AND G04 'NORMAL'  THEN P01 “BERAT”</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&amp;predikat8</p></td>
+    <td colspan="3">=<em>u</em>G01' BESAR' n G02 'MIRING' n G03' SEDANG' n  G04 'NORMAL'</td>
+  </tr>
+  <tr>
+    <td height="25">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">=  min (<em>u</em>G01' BESAR' n G02' MIRING'  n G03' SEDANG' n G04 'NORMAL')</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">= min<span class="style7"> (<em><?php echo"$g1_c";?></em>; <em><?php echo"$g2_b";?></em>; <em><?php echo"$g3_b";?></em>; <em><?php echo"$g4_b";?></em>)</span></td>
+  </tr>
+  <tr>
+    <td><br>    </td>
+    <td>&nbsp;</td>
+    <td colspan="3"><span class="style7">= <em><?php echo"$r8";?></em></span></td>
+  </tr>
+  <tr>
+    <td colspan="5">Menurut  fungsi keanggotaan himpunan P010 dalam aturan fuzzy [R10] maka nilai z10 adalah:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z8 - 46) /(98- 46) </td>
+    <td>=</td>
+    <td><em><?php echo"$r8";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z8 - 46) /(52) </td>
+    <td>=</td>
+    <td><em><?php echo"$r8";?></em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>(z8-46)</td>
+    <td>=</td>
+    <td><em><?php echo"$r8";?></em> * 52 = <?php echo"$r8"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Z8</td>
+    <td>=</td>
+    <td>46 + <?php echo"$r8"*52;?></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="16%">Z8</td>
+    <td>=</td>
+    <td width="62%"><?php echo 46+("$r8"*52);?></td>
+  </tr>
+  
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><div align="center"><strong>DEFUZUFIKASI P01 SKOLIOSIS<br />
+      <br />
+    </strong></div></td>
+    </tr>
+  <tr>
+    <td colspan="5"><table width="100%">
+      <tr>
+        <td width="76%"><div align="center">(<?php echo"$r1";?>*<?php echo( ("$r2"*44)-45)*-1;?>)+(<?php echo"$r2";?>*<?php echo 98-("$r2"*97);?>)+(<?php echo"$r3";?>*<?php echo( ("$r3"*44)-45)*-1;?>)+(<?php echo"$r4";?>*<?php echo 46+("$r4"*52);?>)+(<?php echo"$r5";?>*<?php echo 46+("$r5"*52);?> )+(<?php echo"$r6";?>*<?php echo( ("$r6"*44)-45)*-1;?>)+(<?php echo"$r7";?>*<?php echo( ("$r7"*44)-45)*-1;?>)+(<?php echo"$r8";?>*<?php echo 46+("$r8"*52);?>)</div></td>
+        </tr>
+      <tr>
+        <td><div align="center"><img src="ga.JPG" width="559" height="9" /></div></td>
+        </tr>
+      <tr>
+        <td><div align="center"><?php echo"$r1";?>+<?php echo"$r2";?>+<?php echo"$r3";?>+<?php echo"$r4";?>+<?php echo"$r5";?>+<?php echo"$r6";?>+<?php echo"$r7";?>+<?php echo"$r8";?></div></td>
+        </tr>
+      <tr>
+        <td><div align="center">= <?php echo"$hasil[p1]";?><strong> Skoliosis <?php echo"$hasil[jenis]";?></strong></div></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<?php
+	}
+?>
